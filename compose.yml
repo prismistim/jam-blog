@@ -4,6 +4,6 @@ services:
     ports:
       - "${CLIENT_PORT:-9000}:3306"
     volumes:
-      - ./src:/app
+      - .:/app
     working_dir: /app
     command: npm run dev
