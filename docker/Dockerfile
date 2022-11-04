@@ -8,3 +8,5 @@ WORKDIR /work
 RUN apk update && \
     apk add git && \
     npm install -g npm@latest nuxi nuxt3
+
+CMD ["npm", "run", "dev"]
