@@ -1,0 +1,9 @@
+services:
+  nuxt:
+    build: ./docker/
+    ports:
+      - "${CLIENT_PORT:-9000}:3000"
+    volumes:
+      - .:/work
+    working_dir: /work
+    tty: true
