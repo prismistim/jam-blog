@@ -23,18 +23,29 @@ const articles: Article[] = [
     category: {
       name: 'test'
     }
+  },
+  {
+    title: 'hogehoge',
+    createdAt: '2022-01-01 10:10',
+    updatedAt: '2022-01-01 10:10',
+    content: 'hogehoge',
+    category: {
+      name: 'test'
+    }
   }
 ]
 </script>
 
 <template>
-  <ListItem
-    v-for="item of articles"
-    :key="item.title"
-    :title="item.title"
-    :created-at="item.createdAt"
-    :updated-at="item.updatedAt"
-    :content="item.content"
-    :category="item.category"
-  ></ListItem>
+  <div class="flex flex-col space-y-4">
+    <ListItem
+      v-for="item of articles"
+      :key="item.title"
+      :title="item.title"
+      :created-at="item.createdAt"
+      :updated-at="item.updatedAt"
+      :content="item.content"
+      :category="item.category"
+    ></ListItem>
+  </div>
 </template>
