@@ -7,11 +7,15 @@
     "plugin:vue/vue3-recommended",
     "eslint:recommended",
     "@vue/typescript/recommended",
+    "@nuxtjs/eslint-config-typescript",
     "@vue/prettier"
   ],
   "parser": "vue-eslint-parser",
   "parserOptions": {
     "parser": "@typescript-eslint/parser",
     "sourceType": "module"
+  },
+  "rules": {
+    "vue/no-multiple-template-root": "off"
   }
 }

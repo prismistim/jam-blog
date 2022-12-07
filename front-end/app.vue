@@ -1,8 +1,9 @@
-<script setup lang="ts">
-</script>
+<!-- eslint-disable vue/no-multiple-template-root -->
+<script setup lang="ts"></script>
 
 <template>
+  <PageHeader></PageHeader>
   <div>
-    <NuxtWelcome />
+    <NuxtPage />
   </div>
 </template>

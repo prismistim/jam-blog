@@ -3,5 +3,6 @@ export default defineNuxtConfig({
   runtimeConfig: {
     apiKey: process.env.API_KEY || '',
     serviceDomain: process.env.SERVICE_DOMAIN || ''
-  }
+  },
+  modules: ['@nuxtjs/tailwindcss']
 })
