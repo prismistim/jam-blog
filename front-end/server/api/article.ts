@@ -1,7 +1,8 @@
-import { client } from './client'
+import { useCmsClient } from '~~/composables/useCmsClient'
 import { INITIAL_QUERY } from '~~/constants/blog'
 
 export default defineEventHandler(async (event) => {
+  const client = useCmsClient()
   const query = getQuery(event)
 
   const currentPage: number = Number(query.page) || INITIAL_QUERY.INITIAL_PAGE
