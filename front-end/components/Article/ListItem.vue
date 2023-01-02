@@ -1,28 +1,15 @@
 <script setup lang="ts">
-type Category = {
-  name: string
-}
+import { Article } from '~~/types/Article'
 
-type Props = {
-  title: string
-  createdAt: string
-  updatedAt: string
-  content: string
-  category: Category
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  title: 'テスト記事',
-  createdAt: '2022-01-01 10:10',
-  updatedAt: '2022-01-01 10:10'
-})
+const props = defineProps<{ article: Article }>()
+const { article } = toRefs(props)
 </script>
 
 <template>
   <li class="list-none p-4 bg-neutral-50">
     <div class="grid grid-cols-2 w-1/2">
-      <span>{{ props.updatedAt }}</span>
+      <span>{{ article.publishedAt }}</span>
     </div>
-    <div>{{ props.title }}</div>
+    <div>{{ article.title }}</div>
   </li>
 </template>
