@@ -1,5 +1,6 @@
 import { useCmsClient } from '~~/composables/useCmsClient'
 import { INITIAL_QUERY } from '~~/constants/blog'
+import { Article } from '~~/types/Article'
 
 export default defineEventHandler(async (event) => {
   const client = useCmsClient()
@@ -13,7 +14,7 @@ export default defineEventHandler(async (event) => {
     queries: { offset: (currentPage - 1) * perPage, limit: perPage }
   })
   return {
-    contents,
-    totalCount
+    articles: contents as Article[],
+    totalCount: totalCount as number
   }
 })
