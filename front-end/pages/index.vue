@@ -2,8 +2,9 @@
 const { data } = await useFetch('/api/article', {
   pick: ['articles', 'totalCount']
 })
-const articles = data.value?.articles
-const totalCount = data.value?.totalCount
+
+const articles = reactive(data.value?.articles || [])
+const totalCount = ref(data.value?.totalCount || 0)
 </script>
 
 <template>
